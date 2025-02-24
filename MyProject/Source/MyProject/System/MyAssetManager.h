@@ -17,7 +17,7 @@ class MYPROJECT_API UMyAssetManager : public UAssetManager
 public:
 	UMyAssetManager();
 
-	virtual void StartInitialLoading() override;
+	virtual void StartInitialLoading() final;
 
 	static UMyAssetManager& Get();
 

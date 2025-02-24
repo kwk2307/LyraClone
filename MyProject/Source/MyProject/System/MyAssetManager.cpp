@@ -3,6 +3,7 @@
 
 #include "MyAssetManager.h"
 
+#include "MyProject/MyGameplayTags.h"
 #include "MyProject/MyLogChannels.h"
 
 UMyAssetManager::UMyAssetManager()
@@ -12,9 +13,10 @@ UMyAssetManager::UMyAssetManager()
 
 void UMyAssetManager::StartInitialLoading()
 {
-	Super::StartInitialLoading();
 
-	UE_LOG(	LogMy, Display, TEXT("UMyAssetManager::StartInitialLoading()")	);
+	// 에디터가 켜지기도 전에 초기화 됨 
+	Super::StartInitialLoading();
+	FMyGamePlayTags::InitializeNativeTags();
 }
 
 UMyAssetManager& UMyAssetManager::Get()

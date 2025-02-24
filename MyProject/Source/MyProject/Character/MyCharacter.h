@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
 
+class UMyPawnExtensionComponent;
 UCLASS()
 class MYPROJECT_API AMyCharacter : public ACharacter
 {
@@ -25,5 +26,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
+public:
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="My|Character")
+	TObjectPtr<UMyPawnExtensionComponent> PawnExtComponent;
 };
